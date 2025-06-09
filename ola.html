@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá</title>
+</head>
+<body>
+
+    <h3>Como voce se chama?</h3>
+    <input id="nome" type="text" placeholder="Seu nome">
+    <button onclick="boasvindas(nome)">pronto</button>
+    <div id="mensagem"></div>
+
+    <script>
+
+        function boasvindas(nome){
+            let input = document.querySelector("#nome")
+            let div = document.querySelector("#mensagem")
+            div.innerHTML += `<h1>Seja bem vindo ${input.value}</h1>`;
+            input.value = "";
+            input.focus = true;
+        }
+
+        //boasvindas("julia");
+        //boasvindas("Frank");
+        //boasvindas("Daniel");
+
+    </script>
+</body>
+</html>
