@@ -8,8 +8,9 @@
 </head>
 <body>
     <button onclick="modal()" class="bg-teal-500 leading-[40px] px-6 rounded text-white">Abrir</button>
+
     <div id="modal" class="w-[300px] p-[30px] rounded-xl bg-white fixed top-1/2 left-1/2 -translate-1/2 shadow-xl duration-200 invisible opacity-0 scale-50">
-        <h2 class="flex justify-between">titulo modal<span>X</span></h2>
+        <h2 class="flex justify-between">titulo modal<button onclick="remove()">X</button></h2>
         <p>Mensagem do seu modal</p>
     </div>
     
@@ -24,6 +25,12 @@
             
         }
 
+        function remove(){
+            const divmoodal = document.querySelector("#modal");
+            divmoodal.classList.add("invisible", "opacity-0","scale-50")
+        }
+
+        
     </script>
 
 </body>
