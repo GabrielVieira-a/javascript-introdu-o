@@ -7,13 +7,26 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <button onclick="abrirModal()" class="bg-teal-500 leading-[40px] px-6 rounded text-white">Abrir</button>
+    <button onclick="abrirModal()" class="bg-teal-500 leading-[40px] px-6 rounded text-white">Abrir Modal</button>
+    <button class="bg-teal-500 flex column mt-2 rounded p-2 text-white">Abrir Drawer</button>
 
     <!-- fechar ao clicar na tela quando o modal tiver aberto -->
 
     <div id="fmodal" onclick="fecharModal()" class="fixed inset-0 bg-black/50 invisible opacity-0 transition duration-300 z-10"></div>
+    <div id="fdrawer" onclick="fechardrawer()" class=""></div>
 
 
+    <div id="drawer" class="fixed top-0 h-screen w-[200px] right-0" >
+      <div class="border-b pb-4 pt-3">
+        <h2><button class="mr-4 ml-4">X</button>Basic Drawer</h2>
+      </div>
+      <div class="p-4" >
+        <p>Some coments...</p>
+        <p>Some coments...</p>
+        <p>Some coments...</p>
+      </div>
+
+    </div>
 
             <div id="modal" class="w-[300px] p-[30px] rounded-xl bg-white fixed top-1/2 left-1/2 -translate-1/2 shadow-xl duration-200 invisible opacity-0 scale-50 z-20">
         <h2 class="flex justify-between">titulo modal<button onclick="fecharModal()">X</button></h2>
