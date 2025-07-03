@@ -3,30 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Selecionar Data</title>
 </head>
 <body>
+    <h1>Escolha uma data:</h1>
+
     <select id="dia"></select>
     <select id="mes"></select>
     <select id="ano"></select>
+
+    <h2 id="resultado">Data Escolhida: </h2>
 
     <script>
         const selectDia = document.querySelector("#dia")
         const selectMes = document.querySelector("#mes")
         const selectAno = document.querySelector("#ano")
+        const resultado = document.getElementById("resultado")
 
         for(let i =1; i<=31; i++){
             selectDia.innerHTML += `<option value="${i}">${i}</option>`
         }
-        const meses = ["Janeiro", "Fevereiro", "Março", "Abril"]
+        
+        const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
 
         for(let i=0; i<meses.length; i++){
-            selectMes.innerHTML += `<option value="">${meses[i]}</option>`
+            selectMes.innerHTML += `<option value="${meses[i]}">${meses[i]}</option>`
         }
 
         for(let i =2025; i>=1975; i--){
             selectAno.innerHTML += `<option value="${i}">${i}</option>`
         }
+
+        // ATUALIZAR A DATA
+
+        // Atualizar data escolhida na tela
+        function atualizarData() {
+            const dia = selectDia.value;
+            const mes = selectMes.value;
+            const ano = selectAno.value;
+
+            // Verifica se os 3 valores estão selecionados
+             if(ano%4==0){
+                resultado.innerHTML = `Ano é bissexto`
+            }
+            else if (dia && mes && ano) {
+                resultado.innerText = `Data escolhida: ${dia} de ${mes} de ${ano}`;
+            }
+            else {
+                resultado.innerText = "Data escolhida: ";
+            }
+        }
+
+        // Eventos de mudança
+        selectDia.addEventListener("change", atualizarData);
+        selectMes.addEventListener("change", atualizarData);
+        selectAno.addEventListener("change", atualizarData);
+
 
     </script>
 </body>
